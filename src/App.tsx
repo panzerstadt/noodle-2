@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from "react";
+import "./App.css";
+import { MirrorScene } from "components/Scene";
+import { Html } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ height: "100vh" }}>
+      <Canvas shadows camera={{ position: [0, 0, 1], fov: 70 }}>
+        <color attach="background" args={["black"]} />
+        <Suspense fallback={<Html>Loading!</Html>}>
+          <MirrorScene text="panzerstadt" />
+        </Suspense>
+      </Canvas>
     </div>
   );
 }
