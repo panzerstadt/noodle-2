@@ -1,11 +1,5 @@
-import React, { Suspense, useMemo, useRef } from "react";
-import {
-  CubeCamera,
-  Html,
-  Octahedron,
-  OrbitControls,
-  useMatcapTexture,
-} from "@react-three/drei";
+import React, { useMemo, useRef } from "react";
+import { Octahedron, OrbitControls, useMatcapTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { Mirrors } from "./Mirrors";

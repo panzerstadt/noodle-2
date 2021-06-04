@@ -34,12 +34,10 @@ export const Title = ({ layers = undefined, text, ...props }) => {
 
 export const TitleCopies = ({ layers = undefined, text }) => {
   const vertices = useMemo(() => {
-    const y = new THREE.IcosahedronGeometry(10);
-
+    // const y = new THREE.IcosahedronGeometry(10);
     const t = (1 + Math.sqrt(5)) / 2;
     // prettier-ignore
     const vertices = [-1, t, 0, 1, t, 0, -1, -t, 0, 1, -t, 0, 0, -1, t, 0, 1, t, 0, -1, -t, 0, 1, -t, t, 0, -1, t, 0, 1, -t, 0, -1, -t, 0, 1];
-
     return vertices;
   }, []);
 
